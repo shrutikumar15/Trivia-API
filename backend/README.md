@@ -87,6 +87,131 @@ GET '/categories'
 '5' : "Entertainment",
 '6' : "Sports"}
 
+GET '/questions?page=<page_number>'
+- Fetches a dictionary of questions with each question having id, question, answer, category and difficulty
+- Fetches a dictionary of categories in which the keys are the ids and the value is the corresponding string of the category
+- Fetches questions only belonging to the page_number
+- Fetches a key total_questions with value as the total number of questions
+- Returns: An object with a four keys, 
+                    1) categories, that contains a object of id: category_string key:value pairs.
+                    2) current_category, that contains value current_category_id.
+                    3) questions, that contains objects of id, question, answer, category and difficulty.
+                    4) total_questions, that contains a key with total number of questions as value.
+- Pagination : 10
+- Request Arguments(optional): page_number
+
+{
+  "categories": {
+    "1": "Science",
+    "2": "Art",
+    "3": "Geography",
+    "4": "History",
+    "5": "Entertainment",
+    "6": "Sports"
+  },
+  "current_category": null,
+  "questions": [
+    {
+      "answer": "Agra",
+      "category": 3,
+      "difficulty": 2,
+      "id": 15,
+      "question": "The Taj Mahal is located in which Indian city?"
+    },
+    {
+      "answer": "Escher",
+      "category": 2,
+      "difficulty": 1,
+      "id": 16,
+      "question": "Which Dutch graphic artist\u2013initials M C was a creator of optical illusions?"
+    },
+    .
+    .
+    .
+    ],
+  "success": true,
+  "total_questions": 19
+}
+
+DELETE '/questions/<question_id>'
+- Fetches a key deleted with question_id as the value
+- Fetches a key total_questions with value as the total number of questions
+- Request Argument: question_id
+{
+  "deleted": 15,
+  "success": true,
+  "total_questions": 18
+}
+
+POST '/questions'
+- Fetches a key craeted with id of the created question as the value
+- Fetches a key total_questions with value as the total number of questions
+- Sample Request json: 
+{
+	"question": "question",
+	"answer": "answer",
+	"category": 1,
+	"difficulty": 1
+}
+
+{
+  "created": 24, 
+  "success": true, 
+  "total_questions": 20
+}
+
+POST '/questions/search'
+- Fetches a list of categories with the category id as elements
+- Fetches a dictionary of questions with each question having id, question, answer, category and difficulty
+- Fetches a key total_questions with value as the total number of questions
+- Sample Request json:
+{searchTerm: "what"}
+- question is fetched if it contains searchTerm as a substring 
+{
+  "current_category": [
+    2, 
+    1
+  ], 
+  "questions": [
+    {
+      "answer": "Mona Lisa", 
+      "category": 2, 
+      "difficulty": 3, 
+      "id": 17, 
+      "question": "La Giaconda is better known as what?"
+    }, 
+    {
+      "answer": "Blood", 
+      "category": 1, 
+      "difficulty": 4, 
+      "id": 22, 
+      "question": "Hematology is a branch of medicine involving the study of what?"
+    }
+  ], 
+  "success": true, 
+  "total_questions": 2
+}
+
+POST '/quizzes'
+- Fetches a dictionary of questions with each question having id, question, answer, category and difficulty
+- Fetches questions only with category from the request json data
+- Sample Request json:
+{
+  previous_questions: [], 
+  quiz_category: {type: "Geography", id: "2"}
+}
+
+{
+  "question": {
+    "answer": "Jackson Pollock", 
+    "category": 2, 
+    "difficulty": 2, 
+    "id": 19, 
+    "question": "Which American artist was a pioneer of Abstract Expressionism, and a leading exponent of action painting?"
+  }, 
+  "success": true
+}
+
 ```
 
 
