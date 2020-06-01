@@ -25,3 +25,7 @@ The `./frontend` directory contains a complete React frontend to consume the dat
 Pay special attention to what data the frontend is expecting from each API response to help guide how you format your API. 
 
 [View the README.md within ./frontend for more details.](./frontend/README.md)
+<img width="959" alt="2020-06-02 01_30_39-Mail" src="https://user-images.githubusercontent.com/41858958/83449321-09bf1980-a471-11ea-879e-089797ff3561.png">
+<img width="947" alt="2020-06-02 01_31_33-Mail" src="https://user-images.githubusercontent.com/41858958/83449323-0a57b000-a471-11ea-8540-780f5a4ee064.png">
+<img width="946" alt="2020-06-02 01_29_39-Mail" src="https://user-images.githubusercontent.com/41858958/83449326-0af04680-a471-11ea-9041-41662b9baf64.png">
+<img width="958" alt="2020-06-02 01_30_27-Mail" src="https://user-images.githubusercontent.com/41858958/83449329-0af04680-a471-11ea-973f-309a493a13b7.png">
